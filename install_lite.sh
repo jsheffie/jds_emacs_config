@@ -12,13 +12,5 @@ if [ ! -d ${emacs_plugins_dir} ]; then
 fi
 install_dot_emacs
 install_pycscope
-install_lintnodesh
 install_python
-install_javascript
-install_coffee
-install_yasnippet
-install_lintnode
-install_flymake
 install_auto_complete
-install_nxml
-install_css
