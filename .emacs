@@ -163,9 +163,9 @@
 
 (define-key global-map [f1]  'cscope-set-initial-directory)
 (define-key global-map [f2]  'cscope-unset-initial-directory)
-(define-key global-map [f3]  'cscope-find-egrep-pattern)
+(define-key global-map [f3]  'cscope-find-global-definition)
 (define-key global-map [f4]  'cscope-find-this-symbol)
-(define-key global-map [f5]  'cscope-find-global-definition)
+(define-key global-map [f5]  'cscope-find-egrep-pattern)
 
 (define-key global-map [f6]  'cscope-find-functions-calling-this-function)
 (define-key global-map [f7]  'cscope-find-called-functions)
@@ -175,6 +175,9 @@
 
 (define-key global-map [f10]  'cscope-next-symbol)
 (define-key global-map [f11] 'cscope-prev-symbol)
+(define-key global-map [M-right]  'cscope-next-symbol)
+(define-key global-map [M-left] 'cscope-pop-mark)
+
 ;(define-key global-map [f11] 'cscope-next-file)
 ;(define-key global-map [f12] 'cscope-prev-file)
 
