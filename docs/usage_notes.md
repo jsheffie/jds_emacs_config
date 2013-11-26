@@ -17,4 +17,15 @@ M-f10 ( toggle search buffer)
 F3    ( find global definition)
 M-left ( back) 
 
+Launching the speedbar
+M-x speedbar
 
+Howto get speedbar to show file tagged information?
+ECB is what you want Emacs Code Browser.
+Which requires CEDET
+M-x ecb-activate
+
+M-x global-linenum-mode  ( for line numbering ) 
+
+
+Home: 11/26/2013: Running: GNU Emacs 23.4.1

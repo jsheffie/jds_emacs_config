@@ -88,6 +88,38 @@ install_python() {
     fi
 }
 # ---------------------------------------------------------------------------- #
+# Collection of Emacs Development Tools:  CDET http://cedet.sourceforge.net/   #
+# ---------------------------------------------------------------------------- #
+install_cedet() {
+    cd ${emacs_plugins_dir}
+    ver="1.1"
+    if [ -d "cedet-${ver}" ]; then 
+        echo_warning "Already Installed: CEDET"
+    else
+        info "Installing: CEDET"
+        #curl -o cedet-${ver}.tar.gz http://sourceforge.net/projects/ecb/files/latest/download
+        tar -zxf cedet-${ver}.tar.gz 
+        ln -s cedet-${ver} cedet 
+        rm -f cedet-${ver}.tar.gz
+    fi
+}
+# ---------------------------------------------------------------------------- #
+# Emacs Code Browser: (depends on CDET)                                        #
+# ---------------------------------------------------------------------------- #
+install_ecb() {
+    cd ${emacs_plugins_dir}
+    ver="2.40"
+    if [ -d "ecb-${ver}" ]; then 
+        echo_warning "Already Installed: ECB Emacs Code Browser"
+    else
+        info "Installing: ECB Emacs Code Browser"
+        #curl -o ecb-${ver}.tar.gz http://sourceforge.net/projects/ecb/files/latest/download
+        tar -zxf ecb-${ver}.tar.gz 
+        ln -s ecb-${ver} ecb 
+        rm -f ecb-${ver}.tar.gz
+    fi
+}
+# ---------------------------------------------------------------------------- #
 # auto-complete:                                                               #
 # ---------------------------------------------------------------------------- #
 install_auto_complete() {

@@ -20,3 +20,4 @@ echo "Appended [$file_count] files to [cscope.files]"
 # pip install pycscope
 # Generate a cscope.out file.
 # pycscope -R
+# oh well.. I think I can use this for speedbar.

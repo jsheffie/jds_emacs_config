@@ -236,12 +236,41 @@
 (add-hook 'javascript-mode-hook
           (lambda ()
             (lintnode-hook)))
+; What used to work
+;;; Nice Flymake minibuffer messages
+;(require 'flymake-cursor)
+;(custom-set-variables
+;     '(help-at-pt-timer-delay 0.9)
+;     '(help-at-pt-display-when-idle '(flymake-overlay)))
 
+; What ECB automagically wrote
 ;;; Nice Flymake minibuffer messages
 (require 'flymake-cursor)
 (custom-set-variables
-     '(help-at-pt-timer-delay 0.9)
-     '(help-at-pt-display-when-idle '(flymake-overlay)))
+  ;; custom-set-variables was added by Custom.
+  ;; If you edit it by hand, you could mess it up, so be careful.
+  ;; Your init file should contain only one such instance.
+  ;; If there is more than one, they won't work right.
+ '(ecb-options-version "2.40")
+ '(help-at-pt-display-when-idle (quote (flymake-overlay)) nil (help-at-pt))
+ '(help-at-pt-timer-delay 0.9))
+;; ==========================
+;; Emacs Code Browser
+;; ==========================
+(load-file "~/emacs/plugins/cedet/common/cedet.el")
+(global-ede-mode 1)                      ; Enable the Project management system
+(semantic-load-enable-code-helpers)      ; Enable prototype help and smart completion 
+(global-srecode-minor-mode 1)            ; Enable template insertion menu
+
+;; ==========================
+;; Emacs Code Browser
+;; ==========================
+(add-to-list 'load-path "~/emacs/plugins/ecb")
+;(add-to-list 'load-path "/usr/share/emacs/site-lisp/ecb/")
+(require 'ecb)
+(require 'ecb-autoloads)
+
+
 ;; ==========================
 ;; language autocompleteion
 ;; ==========================
@@ -284,3 +313,9 @@
 ; This is for the c header file includes.
 ; M-x ff-find-related-file
 
+(custom-set-faces
+  ;; custom-set-faces was added by ECB.
+  ;; If you edit it by hand, you could mess it up, so be careful.
+  ;; Your init file should contain only one such instance.
+  ;; If there is more than one, they won't work right.
+ )

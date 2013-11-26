@@ -12,6 +12,8 @@ if [ ! -d ${emacs_plugins_dir} ]; then
 fi
 install_dot_emacs
 install_pycscope
+install_cedet
+install_ecb
 install_lintnodesh
 install_python
 install_javascript
