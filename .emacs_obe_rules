@@ -1,0 +1,170 @@
+;; Commented out for now, not necessary?
+;; (autoload 'ansi-color-for-comint-mode-on "ansi-color" nil t)
+;; (add-hook 'shell-mode-hook 'ansi-color-for-comint-mode-on)
+
+;; my green color scheme
+;(set-background-color "DarkSlateGray")
+;(set-foreground-color "Wheat")
+;(set-cursor-color "Orchid")
+;(set-mouse-color "Orchid")
+
+;(setq default-frame-alist
+;      '((top . 200) (left . 400)
+;        (width . 80) (height . 40)
+;        (cursor-color . "white")
+;        (cursor-type . box)
+;        (foreground-color . "yellow")
+;        (background-color . "black")
+;        (font . "-*-Courier-normal-r-*-*-13-*-*-*-c-*-iso8859-1")))
+
+;; turn on word wrapping in text mode
+;; OBE option
+; (add-hook 'text-mode-hook 'turn-on-auto-fill)
+
+;; kill trailing white space on save
+;;(autoload 'nuke-trailing-whitespace "whitespace" nil t)
+;;(add-hook 'write-file-hooks 'nuke-trailing-whitespace)
+
+;; format the title-bar to always include the buffer name
+; (setq frame-title-format "emacs - %b")
+
+;;(defun linux-c-mode ()
+;;  "C mode with adjusted defaults for use with adsi source code"
+;;  (interactive)
+;;  (c-mode)
+;;  (c-set-style "K&R")
+;;  (setq c-basic-offset 4))
+
+;;(defun linux-c-mode ()
+;;  "C mode with adjusted defaults for use with adsi source code"
+;;  (interactive)
+;;  (c-mode)
+;;;;;;  (c-set-style "ellemtel")
+;;  )
+
+;; Common to all C modes
+;; ---------------------
+;; jeff was here
+;; (add-hook 'c-mode-common-hook
+;;    '(lambda () (c-set-style "linux")
+;; 	(c-set-offset 'case-label 4)
+;; 	(setq c-basic-offset 4)))
+; (add-hook 'c-mode-common-hook
+;    '(lambda () (c-set-style "ellemtel")
+;      (c-set-offset 'case-label 3)
+;      (indent-tabs-mode nil)
+;      (setq c-basic-offset 3)))
+
+;; indent the entire buffer
+;(defun c-indent-buffer ()
+;  "Indent entire buffer of C source code."
+;  (interactive)
+;  (save-excursion
+;    (goto-char (point-min))
+;    (while (< (point) (point-max))
+;      (c-indent-command)
+;      (end-of-line)
+;      (forward-char 1))))
+
+
+
+
+
+;; ==========================
+;; C/C++ indentation
+;; ==========================
+;(defun my-c-mode-common-hook ()
+;  (turn-on-font-lock)
+;  (c-set-offset 'substatement-open 0)
+;  (c-set-offset 'case-label '+)
+;  (c-set-offset 'arglist-cont-nonempty c-lineup-arglist))
+
+;(load "~/nxml-mode-20041004/rng-auto.el")
+;(setq auto-mode-alist
+;      (cons '("\\.\\(xml\\|xsl\\|rng\\|xhtml\\)\\'" . nxml-mode)
+;            auto-mode-alist))
+
+;(load "~/emacs/css-mode.el")
+;(setq auto-mode-alist
+;      (cons '("\\.\\(css\\)\\'" . css-mode)
+;            auto-mode-alist))
+
+;; http://www.mwolson.org/static/dist/emacs-wiki/ 
+;; Add the directories to your load path
+;(add-to-list 'load-path "/path/to/emacs-wiki")
+;; Load emacs-wiki
+;(require 'emacs-wiki)
+
+
+
+;; ==========================
+;; Xcscope related stuff
+;; ==========================
+;; use cscope-indexer  to index the files.
+;; make sure: xcscipe.el is loaded.
+;; /usr/share/emacs/site-lisp/xcscope.el
+(require 'xcscope)
+;(require 'cscope)
+
+;http://cscope.sourceforge.net/large_projects.html
+; find /home/jds/web2py.1.58 -name "*.py" > /home/jds/web2py.1.58/cscope.files
+; The key here is that the full path is needed by cscope.
+
+;; ==========================
+;; Xcscope Trackstore Setting up for trackstore;
+;; ==========================
+; find /home/jds/workspace/Trackstore_svn2 -name "*.py" > /home/jds/workspace/Trackstore_svn2/cscope.files
+; find /home/jds/.virtualenvs/dj-rest_framework/lib/python2.7/site-packages -name "*.py" > /home/jds/workspace/Trackstore_svn2/cscope.files
+
+; This is what the example file had layed out
+; (define-key global-map [(control f3)]  'cscope-set-initial-directory)
+; (define-key global-map [(control f4)]  'cscope-unset-initial-directory)
+; (define-key global-map [(control f5)]  'cscope-find-this-symbol)
+; (define-key global-map [(control f6)]  'cscope-find-global-definition)
+; (define-key global-map [(control f7)]
+;   'cscope-find-global-definition-no-prompting)
+; (define-key global-map [(control f8)]  'cscope-pop-mark)
+; (define-key global-map [(control f9)]  'cscope-next-symbol)
+; (define-key global-map [(control f10)] 'cscope-next-file)
+; (define-key global-map [(control f11)] 'cscope-prev-symbol)
+; (define-key global-map [(control f12)] 'cscope-prev-file)
+
+; These are all of the cscope commands
+; cscope-bury-buffer                 cscope-create-list-of-files-to-index
+; cscope-dired-directory             cscope-display-buffer
+; cscope-display-buffer-toggle       cscope-edit-list-of-files-to-index
+; cscope-find-called-functions       cscope-find-egrep-pattern
+; cscope-find-files-including-file   cscope-find-functions-calling-this-function
+; cscope-find-global-definition      cscope-find-global-definition-no-prompting
+; cscope-find-this-file              cscope-find-this-symbol
+; cscope-find-this-text-string       cscope-help
+; cscope-index-files                 cscope-mouse-select-entry-other-window
+; cscope-next-file                   cscope-next-symbol
+; cscope-pop-mark                    cscope-prev-file
+; cscope-prev-symbol                 cscope-quit
+; cscope-select-entry-one-window     cscope-select-entry-other-window
+; cscope-select-entry-specified-window
+; cscope-set-initial-directory       cscope-show-entry-other-window
+; cscope-tell-user-about-directory   cscope-unset-initial-directory
+
+; Kernel mode
+;; cscope -b -q -k
+; Python mode
+; cscope -b -q
+
+
+
+;;; uncomment this line to disable loading of "default.el" at startup
+;; (setq inhibit-default-init t)
+.....Home loading messages....
+Loading 00debian-vars...done
+Loading /etc/emacs/site-start.d/50autoconf.el (source)...done
+Loading /etc/emacs/site-start.d/50dictionaries-common.el (source)...
+Loading debian-ispell...
+Loading /var/cache/dictionaries-common/emacsen-ispell-default.el (source)...done
+Loading debian-ispell...done
+Loading /var/cache/dictionaries-common/emacsen-ispell-dicts.el (source)...done
+Loading /etc/emacs/site-start.d/50dictionaries-common.el (source)...done
+Loading /etc/emacs/site-start.d/50pylint.el (source)...
+Loading pylint...done
+Loading /etc/emacs/site-start.d/50pylint.el (source)...done

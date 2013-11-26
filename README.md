@@ -1,4 +1,14 @@
-jds_emacs_config
+Jeff Sheffields Emacs Config
 ================
 
-This is a emacs bootstrap dir, for bootstrapping the plugins and my configuration
+Contains my emacs .config, as well as an installation script for installing the various plugins I use.
+To Bootstrap:
+ $ 
+## To Bootstrap emacs 
+- $ mkdir -p $HOME/emacs/plugins
+- $ cd $HOME/emacs
+- clone this repo
+- $ cd jds_emacs_config
+- $ ./install.sh
+
+Congradulations: you should now have git configured for several handy plugins.
