@@ -2,9 +2,7 @@ Jeff Sheffields Emacs Config
 ================
 
 Contains my emacs .config, as well as an installation script for installing the various plugins I use.
-To Bootstrap:
- $ 
-## To Bootstrap emacs 
+## To Bootstrap your emacs 
 - $ mkdir -p $HOME/emacs/plugins
 - $ cd $HOME/emacs
 - clone this repo
