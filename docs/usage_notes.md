@@ -29,3 +29,4 @@ M-x global-linenum-mode  ( for line numbering )
 
 
 Home: 11/26/2013: Running: GNU Emacs 23.4.1
+Work: 11/26/2013: Running: GNU Emacs 24.1.1
