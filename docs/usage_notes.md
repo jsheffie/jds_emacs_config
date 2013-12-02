@@ -28,5 +28,23 @@ M-x ecb-activate
 M-x global-linenum-mode  ( for line numbering ) 
 
 
+-------------------------------
+Get the javascript lint stuff working.
+-------------------------------
+$ cur
+$ lintnode.sh
+
+
 Home: 11/26/2013: Running: GNU Emacs 23.4.1
+Home: 11/29/2013: Running: GNU Emacs 24.??
 Work: 11/26/2013: Running: GNU Emacs 24.1.1
+
+Home: updating 23 -> 24 notes:
+ Issue with CEDET.
+
+ - I just needed to update to point to the cedet-1.1 lib 
+
+ - problem launching ecb-activate
+    if: Symbol's value as variable is void: stack-trace-on-error
+    Solved by setting:
+    (setq stack-trace-on-error t)
