@@ -10,6 +10,7 @@ this_dir="$(dirname $self)"
 if [ ! -d ${emacs_plugins_dir} ]; then
     error "Directory does not exist [${emacs_plugins_dir}]"
 fi
+cwd=$PWD 
 install_dot_emacs
 install_pycscope
 install_cedet
