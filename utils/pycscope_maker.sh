@@ -4,6 +4,9 @@
 # However: I did get it goinig with xemacs.el
 
 pwd=$PWD
+echo "make sure you have done [ workon <project> ] before running this command!!!"
+read foo
+
 echo "Finding..."
 find $pwd -name "*.py" > "$pwd/cscope.files"
 find $VIRTUAL_ENV  -name "*.py" >> "$pwd/cscope.files"
