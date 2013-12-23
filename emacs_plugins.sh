@@ -236,6 +236,7 @@ install_pycscope(){
 # install lintnode.sh                                                          #
 # ---------------------------------------------------------------------------- #
 install_lintnodesh(){
+    cd $cwd
     if [ -f "/usr/bin/lintnode.sh" ]; then 
         echo_warning "Already Installed: lintnode.sh"
     else
